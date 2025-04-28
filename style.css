@@ -1,0 +1,112 @@
+:root {
+    --main-color: darkcyan;
+    --hover-color: #f44336;
+    --radius: 6px;
+    --white-color: white;
+    --border-none: none;
+    --padding: 7px;
+}
+
+body {
+    box-sizing: content-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #eee;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 500px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.container .form {
+    background-color: #e5e5e5;
+    padding: 15px;
+    display: flex;
+    border-radius: var(--radius);
+}
+
+.container .form .input {
+    flex: 1;
+    margin-right: 15px;
+    padding: var(--padding);
+    border: var(--border-none);
+    border-radius: var(--radius);
+}
+
+.container .form .input:focus {
+    outline: var(--border-none);
+}
+
+.container .form .add {
+    color: var(--white-color);
+    background-color: var(--main-color);
+    border: var(--border-none);
+    padding: var(--padding);
+    font-weight: bold;
+    border-radius: var(--radius);
+    transition: .3s;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.container .form .add:hover {
+    background-color: var(--hover-color);
+}
+
+.container .tasks {
+    margin: 1.5rem 0;
+    background-color: #e5e5e5;
+    border-radius: var(--radius);
+    padding: 15px;
+}
+
+.container .tasks .task {
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    font-size: 15px;
+    align-items: center;
+    justify-content:space-between;
+    color: rgb(55, 55, 55);
+    background-color: var(--white-color);
+    padding: 12px 15px;
+    border-radius: calc(var(--radius) - 1px);
+    border: 1px solid #a9a9a9;
+}
+.container .tasks .task:not(:last-child) {
+    margin-bottom: 18px;
+}
+.container .tasks .task:hover {
+    background-color: #f2f0f0;
+}
+@media (max-width: 767px) {
+    .container {
+        width: 300px;
+    }
+}
+.container .deleteAll,
+.container .tasks .task .del {
+    background-color: #f44336;
+    padding: var(--padding) 10px;
+    font-size: 12px;
+    color: var(--white-color);
+    border-radius: var(--radius);
+    transition: 0.3s;
+}
+.container .deleteAll {
+    border: var(--border-none);
+    font-size: 16px;
+    padding: 12px 30px;
+}
+
+.container .deleteAll:hover,
+.container .tasks .task .del:hover {
+    cursor: pointer;
+    background-color: var(--main-color);
+}
+.container .tasks .task.done {
+    opacity: 0.5;
+}
